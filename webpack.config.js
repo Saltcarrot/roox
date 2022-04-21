@@ -4,40 +4,26 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: ['@babel/polyfill', './src/index.tsx'],
+  entry: {
+    app: path.join(__dirname, 'src', 'index.tsx'),
+  },
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   devServer: {
     port: 3000,
   },
-  plugins: [
-    new HTMLWebpackPlugin({
-      template: path.join(__dirname, 'src', 'index.html'),
-    }),
-  ],
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js'],
+  },
   module: {
     rules: [
       {
-        test: /\.m?ts$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-typescript'],
-          },
-        },
-      },
-      {
-        test: /\.m?tsx$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react', '@babel/preset-typescript'],
-          },
-        },
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: '/node_modules/',
       },
       {
         test: /\.s[ac]ss$/i,
@@ -45,4 +31,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: path.join(__dirname, 'src', 'index.html'),
+    }),
+  ],
 }

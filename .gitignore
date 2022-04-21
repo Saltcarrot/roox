@@ -4,7 +4,7 @@
 .idea
 .vscode
 
-# config
+# prettier
 .prettierrc
 
 # dependencies

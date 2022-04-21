@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-ReactDOM.render(
-  <div>Hi, this is React-TS project</div>,
-  document.getElementById('root')
-)
+import Routes from './Routes'
 
 import './assets/scss/global.scss'
+
+ReactDOM.render(<Routes />, document.getElementById('root'))

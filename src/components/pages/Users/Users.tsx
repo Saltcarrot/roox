@@ -8,7 +8,6 @@ import UI from '../../common/UI'
 import Wrapper from '../../common/Containers'
 
 import UserCard from '../../common/UserCard/UserCard'
-import ItemsCounter from '../../common/ItemsCounter/ItemsCounter'
 
 import './Users.module.scss'
 
@@ -45,7 +44,7 @@ const Users: FC = () => {
                 .map((user) => {
                   return <UserCard key={user.id} user={user} />
                 })}
-              <ItemsCounter count={users.length} />
+              <UI.ItemsCounter count={users.length} />
             </>
           )}
         </Wrapper.Container>

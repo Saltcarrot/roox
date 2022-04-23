@@ -46,7 +46,7 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: [
-          // Встраивание стилей в DOM-дерево
+          // Создание CSS файлов для каждого JS, который имеет CSS
           miniCSS.loader,
           // Импорт css в js
           {

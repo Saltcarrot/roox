@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -17,17 +19,33 @@
   }
 }
 
-html {
-  min-height: 100vh;
-}
+//html {
+//  min-height: 100vh;
+//}
 
 body {
-  min-height: 100%;
+  //min-height: 100%;
   min-width: 375px;
   width: 100%;
 
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
   font-size: 16px;
+  line-height: 13px;
   word-wrap: break-word;
 
   overflow-x: hidden;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: 1px solid transparent;
+
+  cursor: pointer;
 }

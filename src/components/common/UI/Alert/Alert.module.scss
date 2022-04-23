@@ -1,0 +1,9 @@
+.alert {
+  padding: 20px;
+
+  border-radius: 10px;
+
+  &:global(.error) {
+    background-color: lightcoral;
+  }
+}

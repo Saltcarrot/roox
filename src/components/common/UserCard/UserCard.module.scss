@@ -1,0 +1,44 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  height: auto;
+
+  padding: 10px;
+
+  border-radius: 8px;
+  background-color: #f3f3f3;
+
+  &:not(:last-of-type) {
+    margin-bottom: 14px;
+  }
+
+  :global(.left) {
+    p {
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+
+      span {
+        color: #A3A3A3;
+      }
+    }
+  }
+
+  :global(.right) {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      display: flex;
+      align-items: center;
+
+      height: 20px;
+
+      margin-top: auto;
+
+      color: blue;
+    }
+  }
+}

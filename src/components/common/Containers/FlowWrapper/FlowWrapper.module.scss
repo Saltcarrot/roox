@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+
+  &:global(.flow) {
+    flex-direction: row;
+  }
+  &:global(.column) {
+    flex-direction: column;
+  }
+}

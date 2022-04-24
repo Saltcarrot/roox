@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import './variables';
 
 * {
   margin: 0;
@@ -19,19 +20,14 @@
   }
 }
 
-//html {
-//  min-height: 100vh;
-//}
-
 body {
-  //min-height: 100%;
   min-width: 375px;
   width: 100%;
 
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 11px;
   line-height: 13px;
   word-wrap: break-word;
 
@@ -40,12 +36,33 @@ body {
 
 a {
   display: block;
+
+  font-size: 12px;
   text-decoration: none;
+
   color: inherit;
 }
 
 button {
   border: 1px solid transparent;
 
+  font-size: 12px;
+
   cursor: pointer;
+}
+
+input, textarea {
+  width: 100%;
+
+  border: 1px solid transparent;
+
+  background-color: #fff;
+
+  box-sizing: border-box;
+
+  &:disabled {
+    &::placeholder {
+      color: $grey;
+    }
+  }
 }

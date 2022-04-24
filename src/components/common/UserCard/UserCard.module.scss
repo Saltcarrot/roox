@@ -8,6 +8,7 @@
   padding: 10px;
 
   border-radius: 8px;
+
   background-color: #f3f3f3;
 
   &:not(:last-of-type) {
@@ -31,10 +32,7 @@
     flex-direction: column;
 
     a {
-      display: flex;
-      align-items: center;
-
-      height: 20px;
+      height: 14px;
 
       margin-top: auto;
 

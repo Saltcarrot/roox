@@ -4,35 +4,25 @@ import { sort } from '../../../types/user'
 import { useFetchUsers } from '../../../hooks/useFetchUsers'
 import { sortUsersByCity, sortUsersByCompany } from '../../../utils/sortUsers'
 
+import Wrappers from '../../common/Wrappers'
 import UI from '../../common/UI'
-import Wrapper from '../../common/Containers'
 
+import Sidebar from '../../common/Sidebar/Sidebar'
 import UserCard from '../../common/UserCard/UserCard'
 
-import './Users.module.scss'
+import styles from '../Page.module.scss'
 
 const Users: FC = () => {
   const [sortValue, setSortValue] = useState<sort>('city')
 
-  const { loading, error, users } = useFetchUsers()
+  const { loading, error, users } = useFetchUsers(false)
 
   return (
-    <Wrapper.Flow flow='row'>
-      <aside className='sidebar'>
-        <Wrapper.Container>
-          <Wrapper.Flow flow='column'>
-            <h3>Сортировка</h3>
-            <UI.Button text='по городу' onClick={() => setSortValue('city')} />
-            <UI.Button
-              text='по компании'
-              onClick={() => setSortValue('company')}
-            />
-          </Wrapper.Flow>
-        </Wrapper.Container>
-      </aside>
-      <div className='user_list'>
-        <Wrapper.Container>
-          <h1>Список полльзователей</h1>
+    <Wrappers.Flow flow='row'>
+      <Sidebar changeState={setSortValue} />
+      <div className={`${styles.user} list`}>
+        <Wrappers.Container>
+          <UI.PageHeader>Список полльзователей</UI.PageHeader>
           {loading && <UI.Loader />}
           {error && <UI.Alert text={`${error}`} />}
           {users && (
@@ -47,9 +37,9 @@ const Users: FC = () => {
               <UI.ItemsCounter count={users.length} />
             </>
           )}
-        </Wrapper.Container>
+        </Wrappers.Container>
       </div>
-    </Wrapper.Flow>
+    </Wrappers.Flow>
   )
 }
 

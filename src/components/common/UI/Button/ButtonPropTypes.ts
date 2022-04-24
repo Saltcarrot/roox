@@ -2,5 +2,7 @@ import { MouseEvent } from 'react'
 
 export interface ButtonPropTypes {
   text: string
-  onClick: (event: MouseEvent<HTMLButtonElement>) => void
+  type?: 'button' | 'submit'
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
+  disabled?: boolean
 }

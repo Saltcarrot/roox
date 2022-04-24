@@ -1,10 +1,26 @@
+@import '../../../../assets/scss/variables';
+
 .button {
-  max-width: 130px;
+  display: block;
 
   padding: 5px 15px;
 
+  text-align: start;
+
   border-radius: 5px;
 
-  background-color: #4B51EF;
+  background-color: $blue;
   color: #fff;
+
+  &[type='submit'] {
+    margin-left: auto;
+
+    background-color: $green;
+  }
+
+  &:disabled {
+    background-color: $grey;
+
+    cursor: inherit;
+  }
 }

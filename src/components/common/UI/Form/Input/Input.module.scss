@@ -1,0 +1,21 @@
+@import '../../../../../assets/scss/variables';
+
+.input {
+  width: 100%;
+
+  padding: 5px 10px;
+
+  border-radius: $border-radius-5;
+  border: 1px solid $grey;
+
+  &:global(.input) {
+    max-width: 211px;
+  }
+  &:global(.textarea) {
+    resize: none;
+
+    height: 55px;
+
+    overflow-y: auto;
+  }
+}

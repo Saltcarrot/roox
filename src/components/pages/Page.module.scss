@@ -1,0 +1,12 @@
+.user {
+  width: 100%;
+
+  margin: 0 auto;
+
+  &:global(.list) {
+    max-width: 460px;
+  }
+  &:global(.profile) {
+    max-width: 478px;
+  }
+}

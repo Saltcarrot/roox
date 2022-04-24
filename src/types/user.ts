@@ -29,3 +29,15 @@ export interface User {
   website: string
   company: Company
 }
+
+export interface UserProfile {
+  name: User['name']
+  username: User['username']
+  email: User['email']
+  city: Address['city']
+  street: Address['street']
+  zipcode: Address['zipcode']
+  phone: User['phone']
+  website: User['website']
+  comment?: string
+}

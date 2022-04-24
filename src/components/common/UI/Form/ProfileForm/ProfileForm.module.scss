@@ -1,0 +1,12 @@
+@import "../../../../../assets/scss/variables";
+
+.form {
+  padding: 20px 6px 20px 12px;
+
+  border-radius: $border-radius-8;
+  border: 1px solid $form-border;
+
+  > div:not(:last-of-type) {
+    margin-bottom: 10px;
+  }
+}

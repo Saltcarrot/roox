@@ -14,6 +14,7 @@ module.exports = {
     // Компилировать в папку build
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   devServer: {
     port: 3000,

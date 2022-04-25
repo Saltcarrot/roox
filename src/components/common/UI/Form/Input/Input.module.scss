@@ -18,4 +18,8 @@
 
     overflow-y: auto;
   }
+
+  &:global(.invalid) {
+    border-color: $red;
+  }
 }

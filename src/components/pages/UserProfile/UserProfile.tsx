@@ -1,6 +1,8 @@
 import React, { FC, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
+import { validationSchema } from '../../../utils/validationSchema'
+
 import { useFetchUsers } from '../../../hooks/useFetchUsers'
 import { useFormikFields } from '../../../hooks/useFormikFields'
 
@@ -43,7 +45,7 @@ const UserProfile: FC = () => {
   const { fields } = useFormikFields(singleUser, initialFields)
 
   const onSubmitHandler = (values: UserProfile) => {
-    console.log(values)
+    console.log(JSON.stringify(values))
   }
 
   return (
@@ -64,6 +66,7 @@ const UserProfile: FC = () => {
             {fields && (
               <UI.Form.Container
                 fields={fields}
+                validationSchema={validationSchema}
                 onSubmit={onSubmitHandler}
                 disabled={disabled}
               />

@@ -11,10 +11,11 @@ const Input: FC<InputPropTypes> = ({
   name,
   onChange,
   disabled,
+  error,
 }) => {
   return (
     <Field
-      className={`${styles.input} ${type}`}
+      className={`${styles.input} ${type} ${error}`}
       name={name}
       as={type}
       value={value}

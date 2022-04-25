@@ -12,6 +12,7 @@ import styles from './ProfileForm.module.scss'
 
 const ProfileForm: FC<ProfileFormPropTypes> = ({
   fields,
+  validationSchema,
   onSubmit,
   disabled,
 }) => {
@@ -23,6 +24,8 @@ const ProfileForm: FC<ProfileFormPropTypes> = ({
           Object.entries(fields).map(([name, { value }]) => [name, value])
         ) as unknown as UserProfile
       }
+      validationSchema={validationSchema}
+      validateOnChange={false}
       onSubmit={onSubmit}
     >
       {({ values, errors, handleChange }) => (
@@ -37,10 +40,8 @@ const ProfileForm: FC<ProfileFormPropTypes> = ({
                   value={values[name as keyof typeof values]}
                   onChange={handleChange}
                   disabled={disabled}
+                  error={errors[name as keyof typeof errors] ? 'invalid' : ''}
                 />
-                {errors[name as keyof typeof errors] && (
-                  <UI.Alert text={errors[name as keyof typeof errors]} />
-                )}
               </Wrappers.Flow>
             )
           })}
